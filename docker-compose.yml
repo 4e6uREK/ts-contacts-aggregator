@@ -1,0 +1,24 @@
+services:
+  contacts-service:
+    build:
+      context: ./ts-contacts-service
+      dockerfile: Dockerfile
+    container_name: contacts-service
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5858:5858
+    environment:
+      - WEBSITE_URL=http://localhost:8080
+
+  contacts-client:
+    build:
+      context: ./ts-contacts-client
+      dockerfile: Dockerfile
+    container_name: contacts-client
+    restart: unless-stopped
+    depends_on:
+      - contacts-service
+    ports:
+      - 127.0.0.1:8080:8080
+
+version: '3'

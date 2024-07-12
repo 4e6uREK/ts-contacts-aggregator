@@ -1,0 +1,6 @@
+[submodule "ts-contacts-client"]
+	path = ts-contacts-client
+	url = https://github.com/4e6uREK/ts-contacts-client
+[submodule "ts-contacts-service"]
+	path = ts-contacts-service
+	url = https://github.com/4e6uREK/ts-contacts-service
